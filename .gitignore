@@ -1,25 +1,25 @@
 # compiled output
-login-auth/dist
-login-auth/tmp
-login-auth/out-tsc
+FileServerFront/dist
+FileServerFront/tmp
+FileServerFront/out-tsc
 # dependencies
 login-auth/node_modules
 # IDEs and editors
 ### VS Code ###
-login-auth/.vscode/
-login-auth/.vscode/*
-login-auth/!.vscode/settings.json
-login-auth/!.vscode/tasks.json
-login-auth/!.vscode/launch.json
-login-auth/!.vscode/extensions.json
-login-auth/.history/*
+FileServerFront/.vscode/
+FileServerFront/.vscode/*
+FileServerFront/!.vscode/settings.json
+FileServerFront/!.vscode/tasks.json
+FileServerFront/!.vscode/launch.json
+FileServerFront/!.vscode/extensions.json
+FileServerFront/.history/*
 ### IDEA #####
-tokenServer/.idea
-tokenServer/*.iws
-tokenServer/*.iml
-tokenServer/*.ipr
-tokenServer/HELP.md
-tokenServer/target/
-tokenServer/!.mvn/wrapper/maven-wrapper.jar
-tokenServer/!**/src/main/**/target/
-tokenServer/!**/src/test/**/target/
+FileServerBack/.idea
+FileServerBack/*.iws
+FileServerBack/*.iml
+FileServerBack/*.ipr
+FileServerBack/HELP.md
+FileServerBack/target/
+FileServerBack/!.mvn/wrapper/maven-wrapper.jar
+FileServerBack/!**/src/main/**/target/
+FileServerBack/!**/src/test/**/target/
