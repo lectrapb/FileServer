@@ -1,0 +1,11 @@
+package com.app.back.domain.model.filestorage.gateways;
+
+import reactor.core.publisher.Mono;
+import com.app.back.domain.model.filestorage.FileStorage;
+
+public interface FileRepositoryService {
+
+    Mono<FileStorage> save(FileStorage fileStorage);
+
+    Mono<FileStorage> findById(String id);
+}

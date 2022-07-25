@@ -1,0 +1,25 @@
+# compiled output
+login-auth/dist
+login-auth/tmp
+login-auth/out-tsc
+# dependencies
+login-auth/node_modules
+# IDEs and editors
+### VS Code ###
+login-auth/.vscode/
+login-auth/.vscode/*
+login-auth/!.vscode/settings.json
+login-auth/!.vscode/tasks.json
+login-auth/!.vscode/launch.json
+login-auth/!.vscode/extensions.json
+login-auth/.history/*
+### IDEA #####
+tokenServer/.idea
+tokenServer/*.iws
+tokenServer/*.iml
+tokenServer/*.ipr
+tokenServer/HELP.md
+tokenServer/target/
+tokenServer/!.mvn/wrapper/maven-wrapper.jar
+tokenServer/!**/src/main/**/target/
+tokenServer/!**/src/test/**/target/
