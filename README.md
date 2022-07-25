@@ -1,2 +1,2 @@
 # FileServer
-Project to storage fiel with Mongo DB; java  and Angular 
+Project to storage files with Mongo DB; java  and Angular 

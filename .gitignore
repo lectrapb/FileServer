@@ -1,5 +1,6 @@
 # compiled output
 FileServerFront/dist
+FileServerFront/node_modules
 FileServerFront/tmp
 FileServerFront/out-tsc
 # dependencies
