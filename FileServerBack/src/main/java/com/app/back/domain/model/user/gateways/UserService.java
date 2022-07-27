@@ -1,7 +1,6 @@
 package com.app.back.domain.model.user.gateways;
 
 import com.app.back.domain.model.user.User;
-import com.app.back.infraestructure.drivenadapter.mongo.entity.UserEntity;
 import com.app.back.infraestructure.drivenadapter.mongo.repository.UserRepository;
 import com.app.back.infraestructure.drivenadapter.mongo.utils.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
