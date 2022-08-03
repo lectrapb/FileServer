@@ -1,6 +1,7 @@
 package com.app.back.domain.usecase.domain;
 
 import com.app.back.domain.model.filestorage.FileStorage;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Date;
@@ -27,5 +28,10 @@ public class FileStorageMother {
         file.setContent("C://");
         file.setType(".pdf");
         return Mono.fromCallable(()-> file);
+    }
+
+    public static Flux<FileStorage> dataFluxOk() {
+
+         return Flux.just(new FileStorage(), new FileStorage());
     }
 }

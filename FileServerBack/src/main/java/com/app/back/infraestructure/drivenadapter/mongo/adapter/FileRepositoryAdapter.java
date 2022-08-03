@@ -5,6 +5,7 @@ import com.app.back.domain.model.filestorage.gateways.FileRepositoryService;
 import com.app.back.infraestructure.drivenadapter.mongo.repository.FileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 @Repository
 public class FileRepositoryAdapter implements FileRepositoryService {
@@ -25,5 +26,12 @@ public class FileRepositoryAdapter implements FileRepositoryService {
     @Override
     public Mono<FileStorage> findById(String id) {
         return null;
+    }
+
+    @Override
+    public Flux<FileStorage> findByName(String fileName) {
+
+        return this.repository.searchByName(fileName)
+                .map(MapperFileStorage::toModel);
     }
 }
