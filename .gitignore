@@ -15,6 +15,7 @@ FileServerFront/!.vscode/launch.json
 FileServerFront/!.vscode/extensions.json
 FileServerFront/.history/*
 ### IDEA #####
+.idea
 FileServerBack/.idea
 FileServerBack/*.iws
 FileServerBack/*.iml
@@ -24,6 +25,6 @@ FileServerBack/target/
 FileServerBack/!.mvn/wrapper/maven-wrapper.jar
 FileServerBack/!**/src/main/**/target/
 FileServerBack/!**/src/test/**/target/
-FileServerBack/!**/src/main/resources/application-dev.yaml
+FileServerBack/**/src/main/resources/application-dev.yaml
 
 
