@@ -5,8 +5,8 @@ spring:
       auto-index-creation: true
       host: localhost
       port: 27017
-      username: devuser
-      password: devpassword
+      username: user
+      password: password
       database: springboot_file_server
 
 logging:
