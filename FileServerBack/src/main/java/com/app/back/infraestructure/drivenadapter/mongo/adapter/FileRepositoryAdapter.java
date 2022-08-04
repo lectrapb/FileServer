@@ -34,4 +34,9 @@ public class FileRepositoryAdapter implements FileRepositoryService {
         return this.repository.searchByName(fileName)
                 .map(MapperFileStorage::toModel);
     }
+
+    @Override
+    public Flux<FileStorage> findAll() {
+        return null;
+    }
 }

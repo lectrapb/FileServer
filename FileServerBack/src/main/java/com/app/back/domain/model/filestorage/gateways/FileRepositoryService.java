@@ -11,4 +11,6 @@ public interface FileRepositoryService {
     Mono<FileStorage> findById(String id);
 
     Flux<FileStorage> findByName(String fileName);
+
+    Flux<FileStorage> findAll();
 }
