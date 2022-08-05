@@ -13,4 +13,6 @@ public interface FileRepositoryService {
     Flux<FileStorage> findByName(String fileName);
 
     Flux<FileStorage> findAll();
+
+    Mono<Void> deleteById(String id);
 }

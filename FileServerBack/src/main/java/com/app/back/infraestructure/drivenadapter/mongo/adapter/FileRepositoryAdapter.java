@@ -37,6 +37,14 @@ public class FileRepositoryAdapter implements FileRepositoryService {
 
     @Override
     public Flux<FileStorage> findAll() {
-        return null;
+
+        return repository
+                .findAll()
+                .map( MapperFileStorage::toModel);
+    }
+
+    @Override
+    public Mono<Void> deleteById(String id) {
+        return repository.deleteById(id);
     }
 }
