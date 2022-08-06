@@ -9,6 +9,13 @@ import java.util.Date;
 @Document("files")
 public class FileStorageEntity {
 
+    public FileStorageEntity() {
+    }
+
+    public FileStorageEntity(String content) {
+        this.content = content;
+    }
+
     @Id
     private String id;
     private String name;

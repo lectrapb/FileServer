@@ -17,7 +17,6 @@ public class DownloadFileUseCase {
           return Mono.fromCallable(() -> fileName)
                   .onErrorResume( e -> Mono.error(new BusinessException("File name null")))
                   .flatMap(fileNameOk -> fileRepository.findByName(fileName)
-                                        .filter( file -> file.getName().equals(fileName))
                                         .next());
     }
 }

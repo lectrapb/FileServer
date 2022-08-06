@@ -1,9 +1,6 @@
 package com.app.back.config;
 
-import com.app.back.domain.usecase.filestorage.DeleteContentUseCase;
-import com.app.back.domain.usecase.filestorage.DownloadFileUseCase;
-import com.app.back.domain.usecase.filestorage.ListContentUseCase;
-import com.app.back.domain.usecase.filestorage.UploadUseCase;
+import com.app.back.domain.usecase.filestorage.*;
 import com.app.back.infraestructure.drivenadapter.mongo.adapter.FileRepositoryAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,5 +29,11 @@ public class UseCaseConfig {
     public DeleteContentUseCase deleteContentUseCase (FileRepositoryAdapter filerepository){
 
         return new DeleteContentUseCase(filerepository);
+    }
+
+    @Bean
+    public PlayVideoUseCase  playVideoUseCase(FileRepositoryAdapter filerepository){
+
+        return new PlayVideoUseCase(filerepository);
     }
 }
