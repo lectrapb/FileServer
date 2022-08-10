@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class RegisterUserController {
 
     @Autowired
     private RegisterUserUseCase registerUserUseCase;

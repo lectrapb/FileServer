@@ -2,9 +2,8 @@ package com.app.back.domain.usecase.user;
 
 import com.app.back.domain.model.user.User;
 import com.app.back.domain.model.user.gateways.PasswordEncryptService;
-import com.app.back.domain.model.user.gateways.UserServiceOne;
+import com.app.back.domain.model.user.gateways.UserService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import reactor.core.publisher.Mono;
 
 
@@ -12,7 +11,7 @@ import reactor.core.publisher.Mono;
 public class RegisterUserUseCase {
 
     private PasswordEncryptService passwordEncryptService;
-    private UserServiceOne userRepository;
+    private UserService userRepository;
 
     public Mono<User> register(User user){
         return Mono.fromCallable(()->user)
@@ -21,7 +20,7 @@ public class RegisterUserUseCase {
                     userIniciate.setPassword(passwordEncryptService.encryptPassword(userIniciate.getPassword()));
                     return userIniciate;
                 })
-                .flatMap(userUpdate -> userRepository.save(userUpdate));
+                .flatMap(userUpdate -> userRepository.saveUser(userUpdate));
 
     }
 }

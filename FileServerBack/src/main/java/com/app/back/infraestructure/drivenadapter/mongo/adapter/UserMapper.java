@@ -1,4 +1,4 @@
-package com.app.back.infraestructure.drivenadapter.mongo.utils;
+package com.app.back.infraestructure.drivenadapter.mongo.adapter;
 
 import com.app.back.domain.model.user.User;
 import com.app.back.infraestructure.drivenadapter.mongo.entity.UserEntity;

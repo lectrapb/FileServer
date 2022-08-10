@@ -5,7 +5,7 @@ import com.app.back.domain.usecase.filestorage.UploadUseCase;
 import com.app.back.domain.usecase.user.RegisterUserUseCase;
 import com.app.back.infraestructure.drivenadapter.mongo.adapter.FileRepositoryAdapter;
 import com.app.back.infraestructure.drivenadapter.security.adapter.PasswordAdapter;
-import com.app.back.infraestructure.drivenadapter.user.UserRepositoryImpl;
+import com.app.back.infraestructure.drivenadapter.mongo.adapter.UserRepositoryImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,7 +24,7 @@ public class UseCaseConfig {
     }
 
     @Bean
-    public RegisterUserUseCase registerUserUseCase(UserRepositoryImpl userRepository, PasswordAdapter passwordAdapter){
+    public RegisterUserUseCase registerUserUseCase(PasswordAdapter passwordAdapter,UserRepositoryImpl userRepository){
         return new RegisterUserUseCase(passwordAdapter,userRepository);
     }
 }
