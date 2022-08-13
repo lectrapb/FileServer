@@ -2,6 +2,7 @@ package com.app.back.infraestructure.drivenadapter.mongo.entity;
 
 import com.app.back.domain.model.user.User;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder(toBuilder = true)
 @Document(collection = "users")
 public class UserEntity {
 

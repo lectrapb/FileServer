@@ -12,8 +12,8 @@ public class ValidateUserUseCase {
     private UserService userRepository;
 
     public Mono<UserEntity> validateUser(UserEntity user){
-         return userRepository.findByEmail(user.getEmail());
-                 //.switchIfEmpty(Mono.defer(() -> Mono.error(new BusinessException("EMAIL_NOT_EXIST","Email no existe"))));
+         return userRepository.findByEmail(user.getEmail())
+                 .switchIfEmpty(Mono.defer(() -> Mono.error(new BusinessException("EMAIL_NOT_EXIST","Email no existe"))));
                  //.onErrorMap(error -> new BusinessException("ERROR_NOT_FOUND","Error en la transaccion" + error.getMessage(), error));
     }
 }
