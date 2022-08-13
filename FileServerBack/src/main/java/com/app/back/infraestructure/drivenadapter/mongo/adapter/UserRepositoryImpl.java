@@ -20,9 +20,8 @@ public class UserRepositoryImpl implements UserService {
     }
 
     @Override
-    public Mono<User> saveUser(User userUpdate) {
-        return repository.insert(UserMapper.toData(userUpdate))
-                .map(UserMapper::toModel);
+    public Mono<UserEntity> saveUser(UserEntity userUpdate) {
+        return repository.insert(userUpdate);
     }
 
     @Override

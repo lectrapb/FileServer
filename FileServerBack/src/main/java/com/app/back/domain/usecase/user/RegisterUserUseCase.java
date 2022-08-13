@@ -1,11 +1,7 @@
 package com.app.back.domain.usecase.user;
 
-import com.app.back.domain.model.exception.BusinessException;
-import com.app.back.domain.model.exception.message.ErrorMessage;
-import com.app.back.domain.model.user.User;
 import com.app.back.domain.model.user.gateways.PasswordEncryptService;
 import com.app.back.domain.model.user.gateways.UserService;
-import com.app.back.infraestructure.drivenadapter.mongo.adapter.UserMapper;
 import com.app.back.infraestructure.drivenadapter.mongo.entity.UserEntity;
 import lombok.AllArgsConstructor;
 import reactor.core.publisher.Mono;
@@ -17,13 +13,8 @@ public class RegisterUserUseCase {
     private PasswordEncryptService passwordEncryptService;
     private UserService userRepository;
 
-    public Mono<User> register(User user) {
-        UserEntity userEnt = UserMapper.toData(user);
-        Mono<UserEntity> userExist = userRepository.findByEmail(userEnt.getEmail());
-        if(userExist != null){
-            //throw new RuntimeException("User Exist");
-            return Mono.defer(()-> Mono.error(new BusinessException(ErrorMessage.TRANSACTION_FIND_EMAIL_DUPLICATE)));
-        }
+    public Mono<UserEntity> register(UserEntity user) {
+        userRepository.findByEmail(user.getEmail());
         return Mono.fromCallable(()->user)
                 .onErrorResume(e -> Mono.error(e))
                 .map(userIniciate -> {
@@ -31,6 +22,5 @@ public class RegisterUserUseCase {
                     return userIniciate;
                 })
                 .flatMap(userUpdate -> userRepository.saveUser(userUpdate));
-
     }
 }
