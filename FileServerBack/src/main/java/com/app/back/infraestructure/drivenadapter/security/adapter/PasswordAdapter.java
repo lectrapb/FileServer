@@ -17,7 +17,11 @@ public class PasswordAdapter implements PasswordEncryptService{
 
     @Override
     public String encryptPassword(String password) {
-        System.out.println("Hola");
         return passwordEncryptService.encryptPassword(password);
+    }
+
+    @Override
+    public boolean cleanPassword(String currentPass, String encryptPass) {
+        return passwordEncryptService.cleanPassword(currentPass,encryptPass);
     }
 }

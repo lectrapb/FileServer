@@ -9,4 +9,8 @@ public class ByCryptImpl implements PasswordEncryptService {
         return BCrypt.hashpw(password, BCrypt.gensalt(12));
     }
 
+    @Override
+    public boolean cleanPassword(String currentPass, String encryptPass) {
+        return BCrypt.checkpw(currentPass,encryptPass);
+    }
 }

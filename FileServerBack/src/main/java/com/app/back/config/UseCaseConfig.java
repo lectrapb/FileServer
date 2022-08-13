@@ -32,7 +32,7 @@ public class UseCaseConfig {
     }
 
     @Bean
-    public ValidateUserUseCase validateUserUseCase(UserRepositoryImpl user){
-        return new ValidateUserUseCase(user);
+    public ValidateUserUseCase validateUserUseCase(PasswordAdapter passwordAdapter,UserRepositoryImpl user){
+        return new ValidateUserUseCase(passwordAdapter, user);
     }
 }
