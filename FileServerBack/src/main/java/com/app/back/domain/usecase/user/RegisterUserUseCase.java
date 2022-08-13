@@ -14,7 +14,8 @@ public class RegisterUserUseCase {
     private UserService userRepository;
 
     public Mono<UserEntity> register(UserEntity user) {
-        userRepository.findByEmail(user.getEmail());
+        UserEntity userEntity1 = new UserEntity();
+        Mono<UserEntity> consulta = userRepository.findByEmail(user.getEmail());
         return Mono.fromCallable(()->user)
                 .onErrorResume(e -> Mono.error(e))
                 .map(userIniciate -> {
