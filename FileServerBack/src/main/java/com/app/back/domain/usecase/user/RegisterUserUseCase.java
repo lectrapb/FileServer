@@ -1,5 +1,7 @@
 package com.app.back.domain.usecase.user;
 
+import com.app.back.domain.model.exception.BusinessException;
+import com.app.back.domain.model.exception.message.ErrorMessage;
 import com.app.back.domain.model.user.User;
 import com.app.back.domain.model.user.gateways.PasswordEncryptService;
 import com.app.back.domain.model.user.gateways.UserService;
@@ -19,7 +21,8 @@ public class RegisterUserUseCase {
         UserEntity userEnt = UserMapper.toData(user);
         Mono<UserEntity> userExist = userRepository.findByEmail(userEnt.getEmail());
         if(userExist != null){
-            throw new RuntimeException("User Exist");
+            //throw new RuntimeException("User Exist");
+            return Mono.defer(()-> Mono.error(new BusinessException(ErrorMessage.TRANSACTION_FIND_EMAIL_DUPLICATE)));
         }
         return Mono.fromCallable(()->user)
                 .onErrorResume(e -> Mono.error(e))
