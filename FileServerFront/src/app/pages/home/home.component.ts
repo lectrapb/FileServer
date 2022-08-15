@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FileService } from '../../services/file.service';
+import { FileStorage } from '../../model/file-storage';
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,9 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listFiles: FileStorage[] = []; 
+
+  constructor(private fileService: FileService) { }
 
   ngOnInit(): void {
+    this.listFiles = this.fileService.getFiles();
   }
 
 }

@@ -1,9 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-.basic{
-    background-color: #1c1c1c;
-    color:white;
+html, body{
+  background-color: #1c1c1c;
+ /* color:white;*/
 }
 
-.hr{
-  color: gray;
+.basic{
+  background-color: #1c1c1c;
+}
+
+
+
+hr{
+  color:gray;
 }
