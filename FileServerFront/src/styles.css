@@ -1,15 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
-html, body{
+html{
   background-color: #1c1c1c;
- /* color:white;*/
+  position: relative;
+  min-height: 100%;
+}
+
+body{
+   margin-bottom: 60px;
 }
 
 .basic{
   background-color: #1c1c1c;
 }
 
-
-
-hr{
-  color:gray;
+.wrap-footer{
+  padding-bottom: 60px;
 }
+
+.cursor{
+
+  cursor: pointer;
+}
+
+
+
