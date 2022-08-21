@@ -26,7 +26,7 @@ class UploadUseCaseTest {
     }
 
     @Test
-    void download_file_usecase_null() {
+    void upload_file_usecase_null() {
 
         useCase.upload(null)
                 .as(StepVerifier::create)
@@ -37,13 +37,13 @@ class UploadUseCaseTest {
     }
 
     @Test
-    void download_file_usecase_ok() {
+    void upload_file_usecase_ok() {
 
 
         when(this.fileRepository.findById(anyString())).thenReturn(FileStorageMother.dataMonoOk());
         useCase.upload(new FileStorage())
                 .as(StepVerifier::create)
-                .expectNextCount(1)
+                .expectNextCount(COUNT)
                 .verifyComplete();
 
         System.out.println("end test download_file_usecase_ok");
