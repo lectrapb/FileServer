@@ -5,7 +5,6 @@ import com.app.back.domain.model.user.gateways.PasswordEncryptService;
 import com.app.back.domain.model.user.gateways.UserService;
 import com.app.back.infraestructure.drivenadapter.mongo.entity.UserEntity;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
