@@ -20,6 +20,7 @@ public class ValidateUserUseCase {
                  .map(userEntity -> {
                      boolean check = passwordEncryptService.cleanPassword(user.getPassword(),userEntity.getPassword());
                      if (check){
+                         checkUsuario.setUid(userEntity.getUid());
                          checkUsuario.setName(user.getName());
                          checkUsuario.setEmail(user.getEmail());
                          checkUsuario.setRole(user.getRole());

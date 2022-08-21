@@ -26,6 +26,7 @@ public class UserEntity {
     private String image;
     private String role;
     private Boolean google = false;
+    private String error;
 
 
     public void initId(){
