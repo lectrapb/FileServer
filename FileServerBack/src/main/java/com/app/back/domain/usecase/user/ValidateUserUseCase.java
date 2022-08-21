@@ -16,6 +16,7 @@ public class ValidateUserUseCase {
     public Mono<UserEntity> validateUser(UserEntity user){
         UserEntity checkUsuario = new UserEntity();
          return userRepository.findByEmail(user.getEmail())
+                 .next()
                  .switchIfEmpty(Mono.defer(() -> Mono.error(new BusinessException("EMAIL_NOT_EXIST","Email no existe"))))
                  .map(userEntity -> {
                      boolean check = passwordEncryptService.cleanPassword(user.getPassword(),userEntity.getPassword());

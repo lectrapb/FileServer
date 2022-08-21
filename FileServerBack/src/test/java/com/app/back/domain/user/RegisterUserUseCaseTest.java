@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
@@ -43,6 +44,7 @@ public class RegisterUserUseCaseTest {
 				.role("admin")
 				.google(true)
 				.build()));
+		when(userService.findByEmail(anyString())).thenReturn(Flux.empty());
 
 		registerUserUseCase.register(UserEntity.builder()
 				.name("yyy")

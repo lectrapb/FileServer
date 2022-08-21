@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
@@ -33,7 +34,7 @@ public class ValidateUserUseCaseTest {
 
 	@Test
 	void validateEvent() {
-		when(userService.findByEmail(anyString())).thenReturn(Mono.just(UserEntity.builder()
+		when(userService.findByEmail(anyString())).thenReturn(Flux.just(UserEntity.builder()
 				.name("bryan")
 				.email("bryan@reactivo.com")
 				.password("hola456")
@@ -57,7 +58,7 @@ public class ValidateUserUseCaseTest {
 
 	@Test
 	void errorEmailNotFound(){
-		when(userService.findByEmail(anyString())).thenReturn(Mono.empty());
+		when(userService.findByEmail(anyString())).thenReturn(Flux.empty());
 
 		validateUserUseCase.validateUser(UserEntity.builder()
 				.uid("1243")

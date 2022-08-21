@@ -8,5 +8,5 @@ import reactor.core.publisher.Mono;
 public interface UserService {
     Mono<UserEntity> saveUser(UserEntity userUpdate);
 
-    Mono<UserEntity> findByEmail(String email);
+    Flux<UserEntity> findByEmail(String email);
 }
