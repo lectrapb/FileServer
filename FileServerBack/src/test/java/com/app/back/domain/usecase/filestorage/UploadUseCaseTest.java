@@ -4,6 +4,7 @@ import com.app.back.domain.model.filestorage.FileStorage;
 import com.app.back.domain.model.filestorage.gateways.FileRepositoryService;
 import com.app.back.domain.usecase.domain.FileStorageMother;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
 
@@ -11,6 +12,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@Disabled
 class UploadUseCaseTest {
 
 

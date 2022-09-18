@@ -1,3 +1,5 @@
+<app-video-player *ngIf="videoName !== 'close'" [nameVideo] = "videoName" ></app-video-player>
+
 <div class="row"
      *ngIf="!loading">
     <div class="col-12">
@@ -35,6 +37,7 @@
             <table class="table table-dark table-striped" *ngIf="listFiles.length > 0">
                 <thead>
                     <tr>
+                        <th>Play</th>
                         <th>Name</th>
                         <th>Type</th>
                         <th>Created</th>
@@ -43,6 +46,21 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let file of listFiles">
+                        <td class="textCenter">
+                            <!-- <a class="cursor"
+                               data-toogle="tooltip"> 
+                               <i class="fa-solid fa-camera-movie text-inverse"></i></a> -->
+                            <a *ngIf="file.type === 'video/mp4' "
+                               (click)="openModal(file.name)" 
+                               class="cursor" 
+                               data-toogle="tooltip" >
+                                <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                            </a>
+                            <a *ngIf="file.type !== 'video/mp4' "
+                                data-toogle="tooltip">
+                             <i class="fa fa-file-archive" aria-hidden="true"></i>
+                         </a>
+                        </td>
                         <td>{{file.name}}</td>
                         <td>{{file.type}}</td>
                         <td>{{file.createAt | date: 'dd/MM/YYYY'}}</td>

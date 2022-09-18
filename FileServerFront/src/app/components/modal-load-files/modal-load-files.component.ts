@@ -23,7 +23,7 @@ export class ModalLoadFilesComponent implements OnInit {
               private fileService: FileService) { }
 
   ngOnInit(): void {
-    this.progress = 0
+    this.progress = 0 
   }
   
   chooseFile(file: File){

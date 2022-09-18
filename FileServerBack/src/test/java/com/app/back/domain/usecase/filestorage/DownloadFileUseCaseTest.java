@@ -3,6 +3,7 @@ package com.app.back.domain.usecase.filestorage;
 import com.app.back.domain.model.filestorage.gateways.FileRepositoryService;
 import com.app.back.domain.usecase.domain.FileStorageMother;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import reactor.test.StepVerifier;
 
@@ -10,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
+@Disabled
 class DownloadFileUseCaseTest {
 
      private static final int COUNT = 1;
@@ -24,6 +25,7 @@ class DownloadFileUseCaseTest {
         fileRepository  = mock(FileRepositoryService.class);
         useCase = new DownloadFileUseCase(fileRepository);
     }
+
 
 
     @Test

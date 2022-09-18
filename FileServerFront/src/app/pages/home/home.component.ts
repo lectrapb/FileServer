@@ -7,6 +7,7 @@ import { FileService } from '../../services/file.service';
 import { FileStorage } from '../../model/file-storage';
 import { ModalFileService } from '../../services/modal-file.service';
 import { environment } from "../../../environments/environment";
+import { PlayVideoService } from 'src/app/services/play-video.service';
 
 
 @Component({
@@ -21,15 +22,21 @@ export class HomeComponent implements OnInit, OnDestroy {
   public loading: boolean = true;
   public fileSubs!: Subscription;
   public urlbase: string = environment.base_url;
+  public videoName: string = 'close';
 
   constructor(private fileService: FileService, 
-              public modalFile: ModalFileService) { }
+              public modalFile: ModalFileService,
+              private playVideo:PlayVideoService) { }
 
   ngOnDestroy(): void {
     this.fileSubs.unsubscribe();
   }
 
   ngOnInit(): void {
+      this.playVideo.notificationClose.subscribe(command =>{
+          console.log('Subscription play video', command);
+          this.videoName = command;  
+      });
       this.loadFiles(); 
       this.fileSubs = this.modalFile.newFile
       .pipe(
@@ -86,6 +93,12 @@ export class HomeComponent implements OnInit, OnDestroy {
         
       }
     });
+  }
+
+  openModal(filename:string):void {
+
+    this.videoName = filename;   
+    this.playVideo.openModal();
   }
 
 }

@@ -6,12 +6,12 @@ import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages.component';
 
 export const routes: Routes = [
-  { path:'test', 
+  { path:'dashboard', 
     component: PagesComponent,
     children: [
       {path: 'home', component: HomeComponent}
     ]
- }
+  }
 ]
 
 @NgModule({
