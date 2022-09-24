@@ -25,6 +25,10 @@ FileServerBack/target/
 FileServerBack/!.mvn/wrapper/maven-wrapper.jar
 FileServerBack/!**/src/main/**/target/
 FileServerBack/!**/src/test/**/target/
+<<<<<<< HEAD
 FileServerBack/**/src/main/resources/application-dev.yaml
 
+=======
+!/FileServerBack/src/main/resources/application-test.yml
+>>>>>>> b07e5466c61741cf5b5a365b81bcc61170465a40
 

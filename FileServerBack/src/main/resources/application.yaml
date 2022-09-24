@@ -3,10 +3,10 @@ spring:
     mongodb:
       authentication-database: admin
       auto-index-creation: true
-      host: 74.207.224.64
+      host: localhost
       port: 27017
-      username: devuser
-      password: devpassword
+      username: user
+      password: password
       database: springboot_file_server
 
 logging:
